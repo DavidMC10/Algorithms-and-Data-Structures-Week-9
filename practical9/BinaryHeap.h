@@ -81,13 +81,15 @@ void BinaryHeap<T>::buildHeap(const Array<T> & data)
     // COMPLETE THIS METHOD
 
 	// 1. ensure underling heap array 'called array' is big enough and resize if required
-	
+	if (array.length() < data.length())
+		array.resize(data.length());
 
 	// 2. empty the heap
-
+	makeEmpty();
 
 	// 3. finally add each data array element to the heap
-	
+	for (int i{ 0 }; i < data.length(); i++)
+		insert(data[i]);
 }
 
 /**
